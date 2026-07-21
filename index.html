@@ -219,22 +219,36 @@
   }
 
   footer{
+    position:relative;
     text-align:center;
-    padding:28px 20px 40px;
-    border-top:1px solid var(--line);
+    padding:44px 24px 40px;
+    margin-top:16px;
+    background:
+      radial-gradient(ellipse 640px 320px at 50% 100%, rgba(201,174,124,.14), transparent 65%),
+      var(--grain),
+      linear-gradient(20deg, var(--ink) 0%, var(--ink-deep) 100%);
+    overflow:hidden;
   }
-  footer .ornament{margin-bottom:10px;}
+  footer::before{
+    content:"";
+    position:absolute;
+    left:0;right:0;top:0;
+    height:14px;
+    background:linear-gradient(to top, transparent, var(--paper));
+    pointer-events:none;
+  }
+  footer .ornament{margin-bottom:14px;color:var(--bronze-light);}
   footer .contact{
     font-family:'Inter',sans-serif;
     font-weight:600;
     font-size:14.5px;
-    color:var(--ink);
+    color:#FBF8F1;
   }
   footer .sub{
     font-family:'Inter',sans-serif;
     font-size:11.5px;
-    color:var(--muted);
-    margin-top:4px;
+    color:rgba(251,248,241,.6);
+    margin-top:6px;
     letter-spacing:.03em;
   }
 
@@ -323,8 +337,8 @@ const DATA = [
     ["Gin Tonic / Martini & Gin","","4,00"],["Cocktail","","6,00"],
   ]},
   { id:"bibite", title:"Bibite", color:"#3F7566", items:[
-    ["Coca Cola, Fanta, Sprite","","2,00"],["Thè pesca / limone (lattina)","","2,00"],
-    ["Thè pesca / limone (bric)","","1,00"],["Thè pesca / limone (bottiglia)","","2,50"],
+    ["Coca Cola, Fanta, Sprite","","2,00"],["Tè pesca / limone (lattina)","","2,00"],
+    ["Tè pesca / limone (bric)","","1,00"],["Tè pesca / limone (bottiglia)","","2,50"],
     ["Brasilena / Gassosa / Bergamotto","","2,00"],["Monster / Red Bull","","3,00"],
     ["Succhi di frutta (a scelta)","","2,00"],
   ]},
