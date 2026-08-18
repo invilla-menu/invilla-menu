@@ -171,7 +171,15 @@
     scroll-margin-top:var(--sticky-h, 112px);
   }
   .cat-head{
-    margin-bottom:16px;
+    margin-bottom:20px;
+    text-align:center;
+  }
+  .cat-head .double-rule{
+    width:64px;
+    margin:10px auto 0;
+    border-top:2px solid var(--line);
+    border-bottom:1px solid var(--line);
+    height:3px;
   }
   .cat-head h2{
     display:inline-flex;
@@ -200,7 +208,7 @@
     color:#fff;
   }
 
-  .item{padding:12px 0 12px 14px;border-bottom:1px dotted var(--line);border-left:3px solid transparent;}
+  .item{padding:18px 0 18px 14px;border-bottom:1px dotted var(--line);border-left:3px solid transparent;}
   .item:last-child{border-bottom:none;}
   .item-row{
     display:flex;
@@ -461,7 +469,7 @@ DATA.forEach(cat => {
   const head = document.createElement('div');
   head.className = 'cat-head';
   const iconSvg = ICONS[cat.id] ? `<svg class="cat-icon" viewBox="0 0 32 32" fill="currentColor">${ICONS[cat.id]}</svg>` : '';
-  head.innerHTML = `<h2 style="background:${cat.color}">${iconSvg}<span>${escapeHtml(cat.title)}</span></h2>`;
+  head.innerHTML = `<h2 style="background:${cat.color}">${iconSvg}<span>${escapeHtml(cat.title)}</span></h2><div class="double-rule"></div>`;
   sec.appendChild(head);
 
   cat.items.forEach(([name, desc, price]) => {
